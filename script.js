@@ -44,7 +44,8 @@ profilePicInput.addEventListener('change', function (event) {
 });
 generateUrlButton.addEventListener('click', function () {
     var name = nameInput.value.trim().replace(/\s+/g, '-').toLowerCase() || "your-name";
-    var uniqueUrl = "https://yourapp.vercel.app/".concat(name);
+    var baseUrl = window.location.origin;
+    var uniqueUrl = "".concat(baseUrl, "/").concat(name);
     uniqueUrlInput.value = uniqueUrl;
 });
 downloadPdfButton.addEventListener('click', function () {
