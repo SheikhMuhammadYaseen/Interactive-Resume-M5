@@ -54,7 +54,8 @@ profilePicInput.addEventListener('change', function(event) {
 
 generateUrlButton.addEventListener('click', () => {
     const name = nameInput.value.trim().replace(/\s+/g, '-').toLowerCase() || "your-name";
-    const uniqueUrl = `https://yourapp.vercel.app/${name}`;
+    const baseUrl = window.location.origin; 
+    const uniqueUrl = `${baseUrl}/${name}`;
     uniqueUrlInput.value = uniqueUrl;
 });
 
